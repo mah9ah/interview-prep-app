@@ -8,7 +8,7 @@ import {Form,} from "@/components/ui/form"
 import Link from "next/link"
 import {toast} from "sonner";
 import FormField from "./FormField"
-
+import {useRouter} from "next/navigation"
 
 
 
@@ -22,6 +22,7 @@ const authFormSchema = (type: FormType) => {
 }
 
 const AuthForm = ({ type }: { type : FormType}) => {
+    const router = useRouter();
     const formSchema = authFormSchema(type);
 
 
@@ -37,9 +38,11 @@ const AuthForm = ({ type }: { type : FormType}) => {
     function onSubmit( values: z.infer<typeof formSchema>){
        try{
         if(type === 'sign-up') {
-            console.log('SIGN UP', values);
+            toast.success('Account created succesfully. Please sign in.');
+            router.push('/sign-in')
         } else{
-            console.log('SIGN IN', values);
+            toast.success('sign in succesful')
+            router.push('/')
         }
 
        } catch(error) {
@@ -62,17 +65,19 @@ const AuthForm = ({ type }: { type : FormType}) => {
         
         <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 mt-4 form">
-        {!isSignIn && (<FormField control= {form.control} name="name" label="name" placeholder="Your name" /> ) }
-        <p>Email</p>
-        <p>Password</p>
+      {!isSignIn && (<FormField control={form.control} name="name" label="Name" placeholder="Your name" />)}
+
+        <FormField control={form.control} name="email" label="Email" placeholder="Your email address" type="email" />
+        <FormField control={form.control} name="password" label="Password" placeholder="Enter your password" type="password" />
+
         
         <Button className="btn" type="submit">{isSignIn ? 'sign in' : 'create an Account'}</Button>
       </form>
     </Form>
     <p className="text-center">
         {isSignIn ? 'NO account yet?' : 'Have an account already?'}
-        <Link href={!isSignIn ? '/sign-in' : '/sign-up'} className="font-bold text-user-primary ml-1">
-        {!isSignIn ? 'Please Sign in' : ' Please Sign up'}
+        <Link href={!isSignIn ? "/sign-in" : "/sign-up"} className="font-bold text-user-primary ml-1">
+        {!isSignIn ? "Please Sign in" : " Please Sign up"}
         </Link>
 
 

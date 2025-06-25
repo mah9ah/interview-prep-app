@@ -13,18 +13,16 @@ interface FormFieldProps <T extends FieldValues> {
 
 }
     
-const FormField = ({ control, name, label, placeholder, type = "text" } : FormFieldProps<T>  ) => (
+const FormField = ({ control, name, label, placeholder, type = "text" } : FormFieldProps<T>  ) => ( 
 
     
           <Controller name = {name} control={control} render = { ( { field}) => (
             <FormItem>
-              <FormLabel className="label">Username</FormLabel>
+              <FormLabel className="label">{label}</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input  className ="input" placeholder={placeholder} type={type} {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
+              
               <FormMessage />
             </FormItem>
           
