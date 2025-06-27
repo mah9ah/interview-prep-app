@@ -219,6 +219,10 @@
     .card-interviewer {
       @apply flex-center flex-col gap-2 p-7 h-[400px] blue-gradient-dark rounded-lg border-2 border-primary-200/50 flex-1 sm:basis-1/2 w-full;
     }
+    .tech-tooltip {
+      @apply absolute bottom-full mb-2 hidden group-hover:flex bg-gray-800 text-white text-xs px-2 py-1 rounded z-10 whitespace-nowrap;
+    }
+    
 
     .avatar {
       @apply z-10 flex items-center justify-center blue-gradient rounded-full size-[120px] relative;
