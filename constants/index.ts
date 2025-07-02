@@ -1,6 +1,6 @@
- /* import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
+import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
 import { z } from "zod";
-*/
+
 export const mappings = {
   "react.js": "react",
   reactjs: "react",
@@ -96,7 +96,7 @@ export const mappings = {
   vercel: "vercel",
   "aws amplify": "amplify",
 };
-/*
+
 export const interviewer: CreateAssistantDTO = {
   name: "Interviewer",
   firstMessage:
@@ -188,7 +188,7 @@ export const feedbackSchema = z.object({
   areasForImprovement: z.array(z.string()),
   finalAssessment: z.string(),
 });
-*/
+
 export const interviewCovers = [
   "/adobe.png",
   "/amazon.png",
