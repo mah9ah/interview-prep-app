@@ -88,7 +88,9 @@ const Agent = ({userName, userId, interviewId, feedbackId, type, questions}: Age
           if (type === "generate") {
             router.push("/");
           } else {
-            handleGenerateFeedback(messages);
+            setTimeout(() => {
+                handleGenerateFeedback(messages);
+            }, 1000);
           }
         }
       }, [messages, callStatus, feedbackId, interviewId, router, type, userId]);
