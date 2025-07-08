@@ -132,3 +132,20 @@ export async function signOut() {
     cookieStore.delete('session')
     redirect('/sign-in')
   }
+
+  export async function retakeInterview(originalInterviewId: string, userId: string) {
+    const original = await db.collection('interviews').doc(originalInterviewId).get();
+  
+    if (!original.exists) return null;
+  
+    const originalData = original.data();
+  
+    const newInterviewRef = await db.collection('interviews').add({
+      ...originalData,
+      finalized: false,
+      createdAt: new Date().toISOString(),
+      userId,
+    });
+  
+    return newInterviewRef.id;
+  }
