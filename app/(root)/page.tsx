@@ -5,6 +5,8 @@ import Image from 'next/image';
 import InterviewCard from '@/components/interviewCard';
 import { getInterviewsByUserId, getLatestInterviews} from '@/lib/actions/general.action';
 import { getCurrentUser } from '@/lib/actions/auth.action';
+import { signOut } from '@/lib/actions/auth.action';
+
 
 
 const page = async () => {
@@ -20,6 +22,16 @@ const page = async () => {
 
   return (
     <>
+    <div className="w-full relative">
+  <form action={signOut}>
+    <button
+      className="absolute top-6 right-6 px-4 py-2 bg-red-600 text-white font-bold rounded-md shadow-lg hover:bg-red-700 hover:scale-105 hover:shadow-xl transition duration-300"
+    >
+      Sign Out
+    </button>
+  </form>
+</div>
+
         <section className="card-cta">
           <div className="flex flex-col gap-6 max-w-lg">
             <h2> Get Ready For Interview With AI-Powered Practice & Feedback</h2>
