@@ -34,15 +34,15 @@ const page = async () => {
 
         <section className="card-cta">
           <div className="flex flex-col gap-6 max-w-lg">
-            <h2> Get Ready For Interview With AI-Powered Practice & Feedback</h2>
-
-            <p className="text-lg">
+          <h2 style={{ color: 'black', textShadow: '0 0 8px #0ef97faa, 0 0 15px #0ef97fff', fontWeight: 600, fontSize: '1.875rem',}}>
+              Get Ready For Interview With AI-Powered Practice & Feedback
+          </h2>
+          <p style={{ color: 'black', textShadow: '0 0 8px #0ef97faa, 0 0 15px #0ef97fff', fontSize: '1.125rem',  }} >
               practice on real interview questions & get instant feedback!
-            </p>
-            <Button asChild className="btn-primary max-sm:2-full">
-              <Link href="/interview"> Start an interview </Link>
-
-            </Button>
+          </p>
+          <Button asChild className="max-sm:w-full" style={{ backgroundColor: 'black', color: 'white', boxShadow: '0 0 10px #0ef97f, 0 0 20px #0ef97f', border: '1px solid #0ef97f', }} >
+              <Link href="/interview">Start an interview</Link>
+          </Button>
           </div>
           <Image src="/robot.png" alt="robo-dude" width={400} height={400} className="max-sm:hidden" />
         </section>
