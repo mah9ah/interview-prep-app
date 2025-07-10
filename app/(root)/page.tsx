@@ -41,7 +41,7 @@ const page = async () => {
               practice on real interview questions & get instant feedback!
           </p>
           <Button asChild className="max-sm:w-full" style={{ backgroundColor: 'black', color: 'white', boxShadow: '0 0 10px #0ef97f, 0 0 20px #0ef97f', border: '1px solid #0ef97f', }} >
-              <Link href="/interview">Start an interview</Link>
+              <Link href="/interview">Generate an Interview</Link>
           </Button>
           </div>
           <Image src="/robot.png" alt="robo-dude" width={400} height={400} className="max-sm:hidden" />
