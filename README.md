@@ -58,6 +58,8 @@ https://interview-prep-yekrhkukg-sediq-projects.vercel.app/sign-in
 <img width="752" height="776" alt="Screenshot 2025-07-27 at 12 25 36 PM" src="https://github.com/user-attachments/assets/f206dc4e-6e1c-4e93-bbad-c2c7540450ab" />
 
 
+**Credits to JAVASCRIPTMASTERY FOR THE HELP ON THIS PROJECT**
+
 
 
 
