@@ -128,7 +128,7 @@ export async function isAuthenticated(){
 }
 
 export async function signOut() {
-    const cookieStore = cookies()
+    const cookieStore = await cookies()
     cookieStore.delete('session')
     redirect('/sign-in')
   }
